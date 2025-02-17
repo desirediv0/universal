@@ -39,15 +39,20 @@ export default function Product({ activepage = "product" }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:px-4">
           {FeaturedProduct.map((items, index) => (
             <Link
-              className="group relative block transform transition-all duration-300 ease-in-out hover:-translate-y-1"
+              className="group relative block transform transition-all duration-300 ease-in-out hover:-translate-y-2"
               key={index}
               href="/product/slug"
             >
               <div className="flex flex-col h-full">
                 {/* Card Container */}
-                <div className="relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
                   {/* Image Container */}
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-[300px] overflow-hidden">
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="bg-white/70 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
+                        {items.category}
+                      </span>
+                    </div>
                     <Image
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       alt={items.title}
@@ -55,18 +60,19 @@ export default function Product({ activepage = "product" }) {
                       height={500}
                       src={items.image}
                     />
-
-                    {/* Optional Overlay Effect */}
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    {/* Enhanced Overlay Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
 
                   {/* Content Section */}
                   <div className="p-6">
-                    <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
                       {items.title}
                     </h2>
-                    <div className="flex items-center">
-                      
+                    <div className="flex justify-end">
+                      <button className="bg-gray-100 hover:bg-[#f0b827] hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-lg text-sm font-medium">
+                        View Details
+                      </button>
                     </div>
                   </div>
                 </div>

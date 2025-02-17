@@ -107,20 +107,18 @@ export default function ProductPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
             {currentProduct.title}
           </h1>
-          <div className="flex items-baseline space-x-2">
+          {/* <div className="flex items-baseline space-x-2">
             <span className="text-2xl md:text-3xl font-medium hover-color">
               ₹{currentProduct.saleprice}
             </span>
             <span className="text-lg md:text-xl text-gray-500 line-through">
               ₹{currentProduct.price}
             </span>
-          </div>
+          </div> */}
 
           {currentProduct.category && (
             <div className="space-y-4">
-              <h2 className="text-xl md:text-2xl font-medium text-gray-900">
-                Category
-              </h2>
+
               <div className="flex flex-wrap gap-2">
                 <span className="bg-[var(--lightcolor)] px-3 py-1 rounded-full text-sm font-medium  border shadow-sm cursor-default">
                   {currentProduct?.category}
@@ -132,7 +130,7 @@ export default function ProductPage() {
           <p className="text-lg pb-6">{currentProduct.shortdesc}</p>
 
           <Link href={`/contact?subject=${currentProduct.title}`}>
-            <button className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 text-white bg-[var(--maincolor)]  rounded-lg shadow-md">
+            <button className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 text-white bg-[#f0b827] hover:bg-[#d7aa37]  rounded-lg shadow-md">
               <span>Contact Now</span>
             </button>
           </Link>
