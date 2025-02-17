@@ -11,15 +11,15 @@ export default function Header() {
     const handleClick = useCallback(() => setIsMenuOpen(prev => !prev), [])
     const menuClick = useCallback(() => {
         setIsMenuOpen(false)
-    },[])
+    }, [])
 
     return (
-        <header className='w-full bg-[var(--lightcolor)] py-3  sticky top-0 left-0 right-0 z-50 '>
+        <header className='w-full bg-white shadow-lg py-3  sticky top-0 left-0 right-0 z-50 '>
             <section className='md:max-w-screen-xl max-w-screen-lg  mx-auto py-2 lg:px-0 px-4'>
                 <div className='flex justify-between items-center'>
                     <Link href='/'>
                         {/* <h1 className='text-2xl'>Mech<span className=' text-[var(--maincolor)]'>X</span></h1> */}
-                        <Image  
+                        <Image
                             src="/logo.jpg"
                             width={150}
                             height={100}
@@ -32,7 +32,7 @@ export default function Header() {
                             <Link href="/" className='hover:underline hover:text-[#f0b827] ' ><li>Home </li></Link>
                             <Link href="/about" className='hover:underline hover:text-[#f0b827]  ' ><li>About </li></Link>
                             <Link href="/product" className='hover:underline hover:text-[#f0b827] ' ><li>Product </li></Link>
-                            
+
                         </ul>
                     </nav>
 
