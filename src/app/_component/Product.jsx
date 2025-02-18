@@ -48,11 +48,6 @@ export default function Product({ activepage = "product" }) {
                 <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
                   {/* Image Container */}
                   <div className="relative h-[300px] overflow-hidden">
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-white/70 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-                        {items.category}
-                      </span>
-                    </div>
                     <Image
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       alt={items.title}
@@ -66,10 +61,10 @@ export default function Product({ activepage = "product" }) {
 
                   {/* Content Section */}
                   <div className="p-6">
-                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
-                      {items.title}
-                    </h2>
-                    <div className="flex justify-end">
+                    <div className="flex justify-between">
+                      <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 items-center">
+                        {items.title}
+                      </h2>
                       <button className="bg-gray-100 hover:bg-[#f0b827] hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-lg text-sm font-medium">
                         View Details
                       </button>

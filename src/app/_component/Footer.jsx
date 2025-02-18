@@ -78,16 +78,8 @@ export default function Footer() {
             </h2>
           </section>
         </div>
-        <div className="w-full mt-8 text-lg py-4 border-t border-black flex">
-          <Image
-            className="w-[100px] h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            alt="logo"
-            width={50}
-            height={500}
-            src={"/logo.jpg"}
-          />
-           | All Rights
-          Reserved | Design By Xcel B2B{" "}
+        <div className="w-full mt-4 text-lg py-4 border-t border-black flex items-center justify-center">
+          <p className="">Copyright &copy; | All Rights Reserved | Design By Xcel B2B</p>
         </div>
       </Wrapper>
     </div>
