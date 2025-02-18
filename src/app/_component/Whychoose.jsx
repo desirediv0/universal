@@ -9,24 +9,24 @@ import Image from 'next/image';
 export default function Whychoose() {
     const features = [
         {
-          title: 'Quality',
-          description: 'We provide machinery that exceeds industry standards.',
-          icon: BsPatchCheck ,
+            title: 'Quality',
+            description: 'We provide machinery that exceeds industry standards.',
+            icon: BsPatchCheck,
         },
         {
-          title: 'Innovation',
-          description: 'We continually integrate advanced technology into our products.',
-          icon: PiLightbulbFilament ,
+            title: 'Innovation',
+            description: 'We continually integrate advanced technology into our products.',
+            icon: PiLightbulbFilament,
         },
         {
-          title: 'Reliability',
-          description: 'We provide machines that are built to last and perform under all conditions.',
-          icon: IoShieldCheckmarkOutline ,
+            title: 'Reliability',
+            description: 'We provide machines that are built to last and perform under all conditions.',
+            icon: IoShieldCheckmarkOutline,
         },
         {
-          title: 'Customer Support',
-          description: 'We deliver unparalleled support and guidance to our clients',
-          icon: RiCustomerService2Line ,
+            title: 'Customer Support',
+            description: 'We deliver unparalleled support and guidance to our clients',
+            icon: RiCustomerService2Line,
         }
     ];
 
@@ -36,7 +36,7 @@ export default function Whychoose() {
                 {/* Section Title */}
                 <div className="mb-12 md:mb-16 flex flex-col items-center justify-center">
                     <h2 className="text-4xl md:text-5xl tracking-tight leading-tight">
-                       Why Choose Us
+                        Why Choose Us
                     </h2>
                     <div className='bg-[#f0b827] w-32 h-1 rounded-full mt-2 '></div>
                 </div>
@@ -46,15 +46,15 @@ export default function Whychoose() {
                     {/* Features Grid */}
                     <div className="w-full lg:w-1/2 grid grid-cols-1 cursor-pointer sm:grid-cols-2 gap-6">
                         {features.map((feature, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="bg-white shadow-md rounded-lg p-6 
-                                    transform transition duration-300 
-                                    hover:scale-105 hover:shadow-lg"
+                                transform transition duration-300 
+                                hover:scale-105 hover:shadow-lg"
                             >
                                 <div className="flex items-center mb-4">
                                     <div className="mr-4 text-[#f0b827] p-2 rounded-full">
-                                  <feature.icon color='' size={35} />
+                                        <feature.icon color='' size={35} />
                                     </div>
                                     <h3 className="text-xl font-semibold text-gray-800">
                                         {feature.title}
