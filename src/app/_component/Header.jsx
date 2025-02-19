@@ -14,7 +14,7 @@ export default function Header() {
     }, [])
 
     return (
-        <header className='w-full bg-[#f0b827] py-2  sticky top-0 left-0 right-0 z-50 '>
+        <header className='w-full bg-[#f0b827] py-4  sticky top-0 left-0 right-0 z-50 '>
             <section className='md:max-w-screen-xl max-w-screen-lg  mx-auto py-2 lg:px-0 px-4'>
                 <div className='flex justify-between items-center'>
                     <Link href='/'>
