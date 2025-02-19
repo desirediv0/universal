@@ -10,17 +10,17 @@ const contactMethods = [
   {
     icon: PiPhoneThin,
     title: "Phone",
-    info: "+91-9870175083",
+    info: "+91-9090939321",
   },
   {
     icon: IoMailOutline,
     title: "Mail",
-    info: "hello@domain.com",
+    info: "mail@umsc.in",
   },
   {
     icon: IoLocationOutline,
     title: "Address",
-    info: "641, Satya the Hive",
+    info: "635, Satya The Hive, Sector 102 Gurugram 122006",
   },
 ];
 

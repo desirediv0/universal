@@ -68,13 +68,13 @@ export default function Footer() {
           <section className="flex flex-col gap-4">
             <h1 className="text-2xl pb-2 font-medium ">Get in Touch</h1>
             <h2 className="flex gap-3 items-center hover:text-[#f0b827]">
-              <IoLocationOutline size={25} /> 641, Satya The Hive
+              <IoLocationOutline size={25} /> 635, Satya The Hive, Sector 102 Gurugram 122006
             </h2>
             <h2 className="flex gap-3 items-center hover:text-[#f0b827]">
-              <LuPhone size={22} /> +91 9870175083
+              <LuPhone size={22} /> +91 9090939321
             </h2>
             <h2 className="flex gap-3 items-center hover:text-[#f0b827]">
-              <LuMail size={22} /> hello@domain.com
+              <LuMail size={22} /> mail@umsc.in
             </h2>
           </section>
         </div>
