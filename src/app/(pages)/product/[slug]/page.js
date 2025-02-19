@@ -108,17 +108,16 @@ export default function ProductPage() {
             {currentProduct.title}
           </h1>
           {/* <div className="flex items-baseline space-x-2">
-            <span className="text-2xl md:text-3xl font-medium hover-color">
-              ₹{currentProduct.saleprice}
-            </span>
-            <span className="text-lg md:text-xl text-gray-500 line-through">
-              ₹{currentProduct.price}
-            </span>
-          </div> */}
+          <span className="text-2xl md:text-3xl font-medium hover-color">
+            ₹{currentProduct.saleprice}
+          </span>
+          <span className="text-lg md:text-xl text-gray-500 line-through">
+            ₹{currentProduct.price}
+          </span>
+        </div> */}
 
           {currentProduct.category && (
             <div className="space-y-4">
-
               <div className="flex flex-wrap gap-2">
                 <span className="bg-[var(--lightcolor)] px-3 py-1 rounded-full text-sm font-medium  border shadow-sm cursor-default">
                   {currentProduct?.category}
@@ -130,8 +129,11 @@ export default function ProductPage() {
           <p className="text-lg pb-6">{currentProduct.shortdesc}</p>
 
           <Link href={`/contact?subject=${currentProduct.title}`}>
-            <button className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 text-white bg-[#f0b827] hover:bg-[#d7aa37]  rounded-lg shadow-md">
-              <span>Contact Now</span>
+            <button className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 text-white bg-green-600 hover:bg-green-700  rounded-lg shadow-md">
+              <div className="flex justify-between">
+                <IoLogoWhatsapp className="text-white" size={25} />
+                <span className="px-4">Contact Now</span>
+              </div>
             </button>
           </Link>
         </div>
