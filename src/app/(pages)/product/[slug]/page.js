@@ -14,6 +14,7 @@ import {
 import { fetchProducts } from "@/Api";
 import Link from "next/link";
 import { Loader2Icon } from "lucide-react";
+import { IoLogoWhatsapp } from "react-icons/io5";
 
 export default function ProductPage() {
   const [products, setProducts] = useState([]);

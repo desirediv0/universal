@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
         <div className="w-full mt-4 text-lg py-4 border-t border-black flex items-center justify-center">
           <p className="">Copyright &copy; | All Rights Reserved | Design By
-            <Link href={"/"} className="text-yellow-500"> Xcel B2B</Link></p>
+            <Link href="https://xcelb2b.com" className="text-yellow-500" target="_blank"> Xcel B2B</Link></p>
         </div>
       </Wrapper>
     </div>

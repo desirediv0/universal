@@ -14,19 +14,21 @@ export default function Header() {
     }, [])
 
     return (
-        <header className='w-full bg-[#f0b827] py-4  sticky top-0 left-0 right-0 z-50 '>
-            <section className='md:max-w-screen-xl max-w-screen-lg  mx-auto py-2 lg:px-0 px-4'>
+        <header className='w-full bg-[#f0b827] py-1  sticky top-0 left-0 right-0 z-50 '>
+            <section className='md:max-w-screen-xl max-w-screen-lg mx-auto py-2 lg:px-0 px-4'>
                 <div className='flex justify-between items-center'>
-                    <Link href='/'>
-                        {/* <h1 className='text-2xl'>Mech<span className=' text-[var(--maincolor)]'>X</span></h1> */}
-                        <Image
-                            src="/logo.jpg"
-                            width={250}
-                            height={100}
-                            alt="logo"
-                            className='text-2xl'
-                        />
-                    </Link>
+                    <div className='bg-[#f0b827]'>
+                        <Link href='/'>
+                            {/* <h1 className='text-2xl'>Mech<span className=' text-[var(--maincolor)]'>X</span></h1> */}
+                            <Image
+                                src="/logo.jpg"
+                                width={290}
+                                height={100}
+                                alt="logo"
+                                className='text-2xl'
+                            />
+                        </Link>
+                    </div>
                     <nav className='md:flex hidden '>
                         <ul className='flex  text-lg gap-6'>
                             <Link href="/" className='text-white hover:underline' ><li>Home </li></Link>
