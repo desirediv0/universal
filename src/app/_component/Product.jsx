@@ -65,7 +65,7 @@ export default function Product({ activepage = "product" }) {
                       <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 items-center">
                         {items.title}
                       </h2>
-                      <button className="bg-gray-100 hover:bg-[#f0b827] hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-lg text-sm font-medium">
+                      <button className="bg-[#0090ce] hover:bg-[#f0b827] text-white transition-colors duration-300 px-6 py-2.5 rounded-lg text-sm font-medium">
                         View Details
                       </button>
                     </div>
@@ -78,7 +78,7 @@ export default function Product({ activepage = "product" }) {
         {activepage === "homepage" && (
           <div className="w-full text-center pt-8">
             <Link href="/product">
-              <button className="bg-[#f0b827] text-white border-0 mt-3 py-3 px-8 rounded-lg  ">
+              <button className="bg-[#0090ce] text-white border-0 mt-3 py-3 px-8 rounded-lg  ">
                 View All Products
               </button>
             </Link>

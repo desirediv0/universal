@@ -23,7 +23,7 @@ const Cta = () => {
         <div className="flex flex-col space-y-4">
           <Link href="/contact">
             <button
-              className="bg-[#f0b827] text-white font-bold py-4 px-8 rounded-lg 
+              className="bg-[#0090ce] text-white font-bold py-4 px-8 rounded-lg 
             transition duration-300 ease-in-out transform hover:-translate-y-1 
             shadow-2xl flex items-center justify-center space-x-3 
             group relative overflow-hidden"

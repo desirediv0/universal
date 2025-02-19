@@ -42,7 +42,7 @@ export default function Header() {
                     <nav className='md:hidden'>
                         <button onClick={handleClick}>{isMenuOpen ? <RxCross2 size={35} /> : <RxHamburgerMenu size={35} />}</button>
                     </nav>
-                    <button className='md:flex hidden'><Link href="/contact" className='py-3 px-12 text-black bg-[#fff] hover:text-[#f0b827] rounded-lg'>Contact</Link></button>
+                    <button className='md:flex hidden'><Link href="/contact" className='py-3 px-12 text-white bg-[#0090ce] hover:text-[#f0b827] hover:bg-white rounded-lg'>Contact</Link></button>
                 </div>
             </section>
             {isMenuOpen && (

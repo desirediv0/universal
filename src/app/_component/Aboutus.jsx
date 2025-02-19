@@ -12,7 +12,7 @@ export default function Aboutus({ activepage = "product" }) {
                         <h1 className='text-4xl md:text-5xl pb-4'>About Us</h1>
                         <p>Welcome to MechX, a trusted leader in the road construction machinery industry. With a passion for innovation and a commitment to excellence, we specialize in delivering top-quality machinery that empowers the construction sector to build the roads of tomorrow.Founded with a vision to revolutionize the road construction sector, [Your Company Name] has grown into a leading provider of innovative machinery solutions. From humble beginnings, we’ve expanded our operations to serve clients across the globe. Our journey is driven by a passion for excellence and a commitment to supporting the construction industry with reliable, efficient, and sustainable equipment.<br />
                             At MechX, we bring decades of experience to the road construction machinery market. Our team is dedicated to understanding the unique needs of contractors, engineers, and construction companies, ensuring we provide cutting-edge solutions that enhance productivity, efficiency, and sustainability.</p>
-                        {activepage === "home" && (<button className='mt-8'><Link href="/about" className=' py-3 px-8 text-white bg-[#f0b827] rounded-lg' >View More</Link></button>)}
+                        {activepage === "home" && (<button className='mt-8'><Link href="/about" className=' py-3 px-8 text-white bg-[#0090ce] rounded-lg' >View More</Link></button>)}
 
                     </section>
                     <section className='relative'>
