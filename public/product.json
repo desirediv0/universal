@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Motor Grader",
+    "category": "Earthmoving Equipment ",
+    "image": "/mg.png",
+    "additionalimage": ["/rr.png", "/mg.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  },
+  {
+    "title": "Road Roller",
+    "category": " Road Surfacing Equipment ",
+    "image": "/rr.png",
+    "additionalimage": ["/rr.png", "/rr.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  },
+  {
+    "title": "Dump Truck ",
+    "category": "Material Handling Equipment",
+    "image": "/dt.png",
+    "additionalimage": ["/dt.png", "/dt.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  },
+  {
+    "title": "Forklift Truck ",
+    "category": "Material Handling Equipment",
+    "image": "/tl.png",
+    "additionalimage": ["/tl.png", "/tl.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  },
+  {
+    "title": "Truck Crane",
+    "category": "Material Handling Equipment",
+    "image": "/crn.png",
+    "additionalimage": ["/crn.png", "/crn.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  },
+  {
+    "title": "Concrete Mixer ",
+    "category": "Concrete Equipment",
+    "image": "/cm.png",
+    "additionalimage": ["/cm.png", "/cm.png"],
+    "saleprice": "3500000",
+    "price": "4500000",
+    "shortdesc": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. ",
+    "Decription": "There are so many types of equipment needed before Motor Grader, but this is an integral one. A motor grader, also known as a road grader is used to surplus or flatten the surface. The equipment is so powerful that it can flat even rockery or earthen surfaces in no time. The motor grader generally consists of three axles. This machine is very important as it fastens the work and helps to complete the construction project quickly."
+  }
+]
