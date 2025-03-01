@@ -107,54 +107,6 @@ export default function Product({ activepage = "product" }) {
           )}
         </span>
 
-        {/* Filter Buttons - Only show on product page */}
-        {activepage === "product" && !Loading && (
-          <div className="flex flex-col items-center mb-8">
-            {/* Category filters */}
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
-              {categories.map((category, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleCategoryChange(category)}
-                  className={`px-4 py-2 rounded-md transition-all ${categoryFilter === category
-                      ? "bg-[#f0b827] text-white"
-                      : "bg-gray-100 hover:bg-gray-200"
-                    }`}
-                >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </button>
-              ))}
-            </div>
-
-            {/* Subcategory filters - only show if a category is selected */}
-            {categoryFilter !== "all" && subcategories.length > 0 && (
-              <div className="flex flex-wrap gap-2 justify-center">
-                <button
-                  onClick={() => handleSubcategoryChange("")}
-                  className={`px-4 py-2 rounded-md transition-all ${subcategoryFilter === ""
-                      ? "bg-[#f0b827] text-white"
-                      : "bg-gray-100 hover:bg-gray-200"
-                    }`}
-                >
-                  All
-                </button>
-                {subcategories.filter(sub => sub !== "").map((subcategory, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleSubcategoryChange(subcategory)}
-                    className={`px-4 py-2 rounded-md transition-all ${subcategoryFilter === subcategory
-                        ? "bg-[#f0b827] text-white"
-                        : "bg-gray-100 hover:bg-gray-200"
-                      }`}
-                  >
-                    {subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
         {Loading && (
           <div className="flex justify-center items-center w-full h-screen">
             <Loader2Icon className="h-8 w-8 animate-spin text-primary" />
