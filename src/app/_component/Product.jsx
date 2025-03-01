@@ -2,25 +2,98 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchProducts } from "@/Api";
+import { fetchProducts, fetchCategoryProducts } from "@/Api";
 import { Loader2Icon } from "lucide-react";
 import Wrapper from "./Wrapper";
 
 export default function Product({ activepage = "product" }) {
   const [Data, setData] = useState([]);
   const [Loading, setLoading] = useState(true);
-  const FeaturedProduct = activepage == "homepage" ? Data.slice(0, 3) : Data;
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [subcategoryFilter, setSubcategoryFilter] = useState("");
+  const [categories, setCategories] = useState(["all"]);
+  const [subcategories, setSubcategories] = useState([]);
+
+  // Get display products based on page and filters
+  const displayProducts = activepage === "homepage" ? Data.slice(0, 3) : Data;
 
   useEffect(() => {
-    const Products = async () => {
-      // Pass true to fetchProducts when we're on the product page to get all products
-      const isAllProducts = activepage === "product";
-      const data = await fetchProducts(isAllProducts);
-      setData(data);
-      setLoading(false);
+    const loadProducts = async () => {
+      setLoading(true);
+      try {
+        let data;
+        if (activepage === "homepage") {
+          // For homepage, fetch only 3 products
+          const result = await fetchCategoryProducts({ categoryName: "all" });
+          data = result.data.products.slice(0, 3);
+        } else {
+          // For product page, fetch filtered products
+          const result = await fetchCategoryProducts({
+            categoryName: categoryFilter,
+            subcategoryName: subcategoryFilter
+          });
+
+          data = result.data.products;
+
+          // If we're applying a filter, only show 3 products
+          if (categoryFilter !== "all" || subcategoryFilter) {
+            data = data.slice(0, 3);
+          }
+        }
+
+        setData(data);
+
+        // Extract and set unique categories
+        if (data.length > 0) {
+          const uniqueCategories = ["all", ...new Set(
+            data.flatMap(item =>
+              item.categories && item.categories.length > 0
+                ? item.categories
+                : []
+            )
+          )];
+          setCategories(uniqueCategories);
+
+          // Extract subcategories from the selected category
+          if (categoryFilter !== "all") {
+            const uniqueSubcategories = ["", ...new Set(
+              data
+                .filter(item =>
+                  item.categories &&
+                  item.categories.includes(categoryFilter)
+                )
+                .flatMap(item =>
+                  item.subCategories && item.subCategories.length > 0
+                    ? item.subCategories
+                    : []
+                )
+            )];
+            setSubcategories(uniqueSubcategories);
+          } else {
+            setSubcategories([]);
+          }
+        }
+      } catch (error) {
+        console.error("Error loading products:", error);
+        setData([]);
+      } finally {
+        setLoading(false);
+      }
     };
-    Products();
-  }, [activepage]);
+
+    loadProducts();
+  }, [activepage, categoryFilter, subcategoryFilter]);
+
+  // Handle category change
+  const handleCategoryChange = (category) => {
+    setCategoryFilter(category);
+    setSubcategoryFilter(""); // Reset subcategory when category changes
+  };
+
+  // Handle subcategory change
+  const handleSubcategoryChange = (subcategory) => {
+    setSubcategoryFilter(subcategory);
+  };
 
   return (
     <>
@@ -33,14 +106,64 @@ export default function Product({ activepage = "product" }) {
             <div className="bg-[#f0b827] w-32 h-1 rounded-full mt-2 "></div>
           )}
         </span>
+
+        {/* Filter Buttons - Only show on product page */}
+        {activepage === "product" && !Loading && (
+          <div className="flex flex-col items-center mb-8">
+            {/* Category filters */}
+            <div className="flex flex-wrap gap-2 justify-center mb-4">
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleCategoryChange(category)}
+                  className={`px-4 py-2 rounded-md transition-all ${categoryFilter === category
+                      ? "bg-[#f0b827] text-white"
+                      : "bg-gray-100 hover:bg-gray-200"
+                    }`}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </button>
+              ))}
+            </div>
+
+            {/* Subcategory filters - only show if a category is selected */}
+            {categoryFilter !== "all" && subcategories.length > 0 && (
+              <div className="flex flex-wrap gap-2 justify-center">
+                <button
+                  onClick={() => handleSubcategoryChange("")}
+                  className={`px-4 py-2 rounded-md transition-all ${subcategoryFilter === ""
+                      ? "bg-[#f0b827] text-white"
+                      : "bg-gray-100 hover:bg-gray-200"
+                    }`}
+                >
+                  All
+                </button>
+                {subcategories.filter(sub => sub !== "").map((subcategory, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSubcategoryChange(subcategory)}
+                    className={`px-4 py-2 rounded-md transition-all ${subcategoryFilter === subcategory
+                        ? "bg-[#f0b827] text-white"
+                        : "bg-gray-100 hover:bg-gray-200"
+                      }`}
+                  >
+                    {subcategory.charAt(0).toUpperCase() + subcategory.slice(1)}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {Loading && (
           <div className="flex justify-center items-center w-full h-screen">
             <Loader2Icon className="h-8 w-8 animate-spin text-primary" />
             <span className="ml-2 text-lg font-medium">Loading...</span>
           </div>
         )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:px-4">
-          {FeaturedProduct.map((items, index) => (
+          {displayProducts.map((items, index) => (
             <Link
               className="group relative block transform transition-all duration-300 ease-in-out hover:-translate-y-2"
               key={index}
@@ -78,10 +201,12 @@ export default function Product({ activepage = "product" }) {
             </Link>
           ))}
         </div>
-        {activepage === "homepage" && (
+
+        {/* Show "View All" button on homepage or when filtered */}
+        {(activepage === "homepage" || (categoryFilter !== "all" || subcategoryFilter)) && (
           <div className="w-full text-center pt-8">
             <Link href="/product">
-              <button className="bg-[#f0b827] text-white border-0 mt-3 py-3 px-8 rounded-lg  ">
+              <button className="bg-[#f0b827] text-white border-0 mt-3 py-3 px-8 rounded-lg">
                 View All Products
               </button>
             </Link>
