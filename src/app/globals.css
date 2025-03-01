@@ -84,3 +84,43 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.product-content {
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.product-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-content p, 
+.product-content div, 
+.product-content span, 
+.product-content h1, 
+.product-content h2, 
+.product-content h3, 
+.product-content h4, 
+.product-content h5, 
+.product-content h6 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.product-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.product-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  max-width: 100%;
+}

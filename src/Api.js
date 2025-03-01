@@ -1,10 +1,19 @@
-export const fetchProducts = async () => {
+export const fetchProducts = async (isAllProducts = false) => {
     try {
-        const response = await fetch('/product.json');
-        const data = await response.json();
-        return data
+        if (isAllProducts) {
+            // Call the API to fetch all products
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/all`);
+            const data = await response.json();
+            return data.data || []; // Return the data array directly
+        } else {
+            // Use the local JSON for homepage products
+            const response = await fetch('/product.json');
+            const data = await response.json();
+            return data;
+        }
     } catch (error) {
-        throw error
+        console.error('Error fetching products:', error);
+        throw error;
     }
 }
 

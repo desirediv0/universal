@@ -10,14 +10,17 @@ export default function Product({ activepage = "product" }) {
   const [Data, setData] = useState([]);
   const [Loading, setLoading] = useState(true);
   const FeaturedProduct = activepage == "homepage" ? Data.slice(0, 3) : Data;
+
   useEffect(() => {
     const Products = async () => {
-      const data = await fetchProducts();
+      // Pass true to fetchProducts when we're on the product page to get all products
+      const isAllProducts = activepage === "product";
+      const data = await fetchProducts(isAllProducts);
       setData(data);
       setLoading(false);
     };
     Products();
-  }, []);
+  }, [activepage]);
 
   return (
     <>
@@ -41,7 +44,7 @@ export default function Product({ activepage = "product" }) {
             <Link
               className="group relative block transform transition-all duration-300 ease-in-out hover:-translate-y-2"
               key={index}
-              href="/product/slug"
+              href={`/product/${items.slug}`}
             >
               <div className="flex flex-col h-full">
                 {/* Card Container */}
@@ -62,9 +65,9 @@ export default function Product({ activepage = "product" }) {
                   {/* Content Section */}
                   <div className="p-6">
                     <div className="flex justify-between">
-                    <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 items-center">
-                      {items.title}
-                    </h2>
+                      <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 items-center">
+                        {items.title}
+                      </h2>
                       <button className="bg-gray-100 hover:bg-[#f0b827] hover:text-white transition-colors duration-300 px-6 py-2.5 rounded-lg text-sm font-medium">
                         View Details
                       </button>
