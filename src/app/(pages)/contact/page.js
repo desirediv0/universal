@@ -11,20 +11,20 @@ const contactMethods = [
   {
     icon: PiPhoneThin,
     title: "Phone",
-    info: "+91-9870175083",
-    link: "tel:+919870175083",
+    info: "+91 9090939321",
+    link: "tel:+9090939321",
   },
   {
     icon: IoMailOutline,
     title: "Mail",
-    info: "hello@domain.com",
-    link: "mailto:hello@domain.com",
+    info: "mail@umsc.in",
+    link: "mailto:mail@umsc.in",
   },
   {
     icon: IoLocationOutline,
     title: "Address",
-    info: "641, Satya the Hive",
-    link: "https://goo.gl/maps/yourAddress",
+    info: "635, Satya The Hive,Sector-102 Gurugram 122006",
+    link: "https://www.google.com/maps?q=635,Satya+The+Hive,Sector-102+Gurugram+122006",
   },
 ];
 
@@ -176,7 +176,7 @@ export default function Contact() {
             ))}
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.288074788611!2d76.96075877528283!3d28.470869875753362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17957da3b1e7%3A0xe31b6d39c72cc555!2sDesire%20Div%20-%20Website%20Designing%20Company%20in%20Gurgaon!5e0!3m2!1sen!2sin!4v1731919600012!5m2!1sen!2sin"
+            src="https://www.google.com/maps?q=635,Satya+The+Hive,Sector-102+Gurugram+122006&output=embed"
             width="100%"
             height="310"
             allowFullScreen=""
