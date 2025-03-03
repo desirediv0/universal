@@ -36,7 +36,7 @@ export default function Header() {
                             <input
                                 type="text"
                                 placeholder="Search products..."
-                                className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                                className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                             />
                             <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
                         </div>
@@ -51,7 +51,7 @@ export default function Header() {
                             </div>
                         </div>
                         {/* Get Quote Button */}
-                        <Link href="/quote">
+                        <Link href="/contact">
                             <button className="bg-yellow-500 text-white px-4 py-2 rounded-full flex items-center space-x-2 hover:bg-yellow-600 transition">
                                 <IoChatbubbleOutline />
                                 <span>Get Quote</span>
