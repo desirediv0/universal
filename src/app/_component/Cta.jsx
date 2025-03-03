@@ -13,10 +13,11 @@ const Cta = () => {
             </h2>
           </div>
           <p className="text-lg text-black max-w-xl leading-relaxed">
-            Your one-stop destination for high-quality road construction
-            machinery. We offer durable, efficient, and innovative equipment to
-            power your projects and ensure seamless construction, paving the way
-            for a better tomorrow.
+            Transform the way you build with high-performance road construction
+            machinery. Designed for durability, precision, and efficiency, our
+            equipment ensures seamless project execution—from soil stabilization
+            to road reclamation. Join us in shaping stronger, smarter, and more
+            sustainable infrastructure for the future.
           </p>
         </div>
 
@@ -34,7 +35,7 @@ const Cta = () => {
           </Link>
 
           <div className="text-center text-sm text-gray-400">
-            ISO Certified 2024
+            Let’s Build Together
           </div>
         </div>
       </div>

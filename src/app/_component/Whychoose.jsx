@@ -8,26 +8,30 @@ import Image from 'next/image';
 
 export default function Whychoose() {
     const features = [
-        {
-          title: 'Quality',
-          description: 'We provide machinery that exceeds industry standards.',
-          icon: BsPatchCheck ,
-        },
-        {
-          title: 'Innovation',
-          description: 'We continually integrate advanced technology into our products.',
-          icon: PiLightbulbFilament ,
-        },
-        {
-          title: 'Reliability',
-          description: 'We provide machines that are built to last and perform under all conditions.',
-          icon: IoShieldCheckmarkOutline ,
-        },
-        {
-          title: 'Customer Support',
-          description: 'We deliver unparalleled support and guidance to our clients',
-          icon: RiCustomerService2Line ,
-        }
+      {
+        title: "Quality",
+        description:
+          "We provide high-standard machinery that exceeds industry requirements, ensuring durability, efficiency, and top-tier performance in road construction and soil stabilization projects",
+        icon: BsPatchCheck,
+      },
+      {
+        title: "Innovation",
+        description:
+          "Our products integrate cutting-edge technology to enhance productivity, precision, and cost-effectiveness, making road construction faster, smarter, and more reliable.",
+        icon: PiLightbulbFilament,
+      },
+      {
+        title: "Reliability",
+        description:
+          "Designed for longevity and tough conditions, our machines ensure consistent performance, minimal downtime, and maximum efficiency, even in challenging terrains.",
+        icon: IoShieldCheckmarkOutline,
+      },
+      {
+        title: "Customer Support",
+        description:
+          "We offer dedicated technical assistance, expert servicing, and customized solutions, ensuring seamless operation and long-term reliability for all our clients.",
+        icon: RiCustomerService2Line,
+      },
     ];
 
     return (
