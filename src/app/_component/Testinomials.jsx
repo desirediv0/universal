@@ -4,17 +4,17 @@ import Wrapper from './Wrapper';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "We've been using equipment from MechX for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
+      quote: "We've been using equipment from Universal for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
       client: "Rahul Kumar",
 
     },
     {
-      quote: "We've been using equipment from MechX for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
+      quote: "We've been using equipment from Universal for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
       client: "Nilesh Kapoor",
 
     },
     {
-      quote: "We've been using equipment from MechX for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
+      quote: "We've been using equipment from Universal for over two years, and the quality is unmatched. Their road rollers and asphalt pavers are built to last, and their performance on site has been outstanding.",
       client: "Hitesh Solanki",
 
     }

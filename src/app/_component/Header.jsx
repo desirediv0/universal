@@ -18,8 +18,8 @@ export default function Header() {
             <section className='md:max-w-screen-xl max-w-screen-lg  mx-auto py-2 lg:px-0 px-2'>
                 <div className='flex justify-between items-center'>
                     <Link href='/'>
-                        {/* <h1 className='text-2xl'>Mech<span className=' text-[var(--maincolor)]'>X</span></h1> */}
-                        <Image  
+                        {/* <h1 className='text-2xl'>Universal<span className=' text-[var(--maincolor)]'>X</span></h1> */}
+                        <Image
                             src="/logo.jpg"
                             width={250}
                             height={100}
@@ -32,7 +32,7 @@ export default function Header() {
                             <Link href="/" className='text-white hover:underline' ><li>Home </li></Link>
                             <Link href="/about" className='text-white hover:underline' ><li>About </li></Link>
                             <Link href="/product" className='text-white hover:underline' ><li>Product </li></Link>
-                            
+
                         </ul>
                     </nav>
 
