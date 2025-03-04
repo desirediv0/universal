@@ -10,7 +10,7 @@ export default function Aboutus({ activepage = "product" }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <section>
               <h1 className="text-4xl md:text-5xl pb-4">About Us</h1>
-              <p>
+              <p className="text-lg">
                 At Universal Machines, we are dedicated to revolutionizing the
                 construction and road maintenance industry by providing
                 state-of-the-art soil stabilization and road reclamation
@@ -39,9 +39,12 @@ export default function Aboutus({ activepage = "product" }) {
               )}
             </section>
             <section className="relative">
-              <Image alt="about image" height={400} width={600} src="/cm.png" />
+              <Image alt="about image" 
+              height={400} 
+              width={600} src="/cm.png"
+              className="rounded-lg"/>
               <div className="p-8 absolute bg-[#f0b827] rounded-lg text-white text-xl left-2 bottom-[-80px] flex lg:flex md:hidden lg:bottom-2 lg:left-[-80px]">
-                Explore Our  <br />
+                Explore Our <br />
                 Journey
               </div>
             </section>

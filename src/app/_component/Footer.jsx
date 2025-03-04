@@ -88,7 +88,7 @@ export default function Footer() {
           </section>
         </div>
         <div className="w-full mt-4 text-lg py-4 border-t border-black flex items-center justify-center">
-          <p className="">Copyright &copy; | All Rights Reserved | Design By
+          <p className="">Copyright &copy;  | All Rights Reserved | Design By
             <Link href={"https://xcelb2b.com"} className="text-yellow-500"> Xcel B2B</Link></p>
         </div>
       </Wrapper>
