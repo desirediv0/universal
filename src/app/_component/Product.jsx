@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchProducts, fetchCategoryProducts } from "@/Api";
+import { fetchCategoryProducts } from "@/Api";
 import { Loader2Icon } from "lucide-react";
 import Wrapper from "./Wrapper";
 

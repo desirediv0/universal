@@ -150,3 +150,28 @@ const normalizeProductData = (rawData) => {
     };
 };
 
+
+export const searchProducts = async (query) => {
+    try {
+        if (!query?.trim()) return [];
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/user-search?q=${encodeURIComponent(query.trim())}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Cache-Control': 'no-cache'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Search failed');
+        }
+
+        const data = await response.json();
+        // Return the message array which contains products
+        return data.success && Array.isArray(data.message) ? data.message : [];
+    } catch (error) {
+        console.error('Search failed:', error);
+        return [];
+    }
+};
