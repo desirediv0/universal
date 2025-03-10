@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 import { fetchsingleProduct } from "@/Api";
 import Link from "next/link";
-import { Loader2Icon, AlertCircle } from "lucide-react";
+import { Loader2Icon, AlertCircle, ArrowLeft } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function ProductPage() {
@@ -96,6 +96,13 @@ export default function ProductPage() {
     );
   }, [product]);
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "8859399593";
+    const message = encodeURIComponent(`I'm interested in: ${product.title}`);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -126,29 +133,58 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 mt-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <div className="relative flex justify-center overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 pt-6 pb-16">
+      {/* Breadcrumb Navigation */}
+      <nav className="flex mb-6 text-sm text-gray-500">
+        <Link href="/" className="hover:text-primary transition-colors">
+          Home
+        </Link>
+        <span className="mx-2">/</span>
+        <Link href="/product" className="hover:text-primary transition-colors">
+          Products
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-gray-800 font-medium truncate max-w-[200px]">
+          {product.title}
+        </span>
+      </nav>
+
+      {/* Back Button - Mobile Only */}
+      <div className="block lg:hidden mb-4">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center text-sm font-medium text-gray-600 hover:text-primary"
+        >
+          <ArrowLeft size={16} className="mr-1" />
+          Back
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Product Images */}
+        <div className="space-y-5">
+          <div className="relative flex justify-center overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
             {mainImage && (
               <Image
                 src={mainImage}
                 alt={product.title}
-                height={500}
-                width={600}
+                height={600}
+                width={700}
                 priority={true}
-                className="w-auto h-auto"
+                className="w-full h-auto max-h-[500px] object-contain p-4"
+                style={{ width: 'auto', height: 'auto' }}
               />
             )}
           </div>
+
           {allImages.length > 1 && (
-            <Carousel className="w-full max-w-xs mx-auto" ref={emblaRef}>
+            <Carousel className="w-full max-w-md mx-auto" ref={emblaRef}>
               <CarouselContent>
                 {allImages.map((image, index) => (
-                  <CarouselItem key={index} className="basis-1/3">
+                  <CarouselItem key={index} className="basis-1/4 sm:basis-1/5">
                     <div className="p-1">
-                      <Card className="hover:shadow-md transition-shadow duration-300">
-                        <CardContent className="flex items-center justify-center p-0">
+                      <Card className={`hover:shadow-md transition-shadow duration-300 ${mainImage === image ? 'ring-2 ring-primary' : ''}`}>
+                        <CardContent className="flex items-center justify-center p-1">
                           {image && (
                             <Image
                               src={image}
@@ -157,10 +193,7 @@ export default function ProductPage() {
                               height={100}
                               priority={index < 2}
                               className="rounded-md cursor-pointer object-cover hover:opacity-80 transition-opacity duration-300"
-                              onClick={() => {
-                                setMainImage(image);
-                                scrollTo(index);
-                              }}
+                              style={{ width: '100%', height: 'auto' }}
                             />
                           )}
                         </CardContent>
@@ -174,14 +207,20 @@ export default function ProductPage() {
             </Carousel>
           )}
         </div>
-        <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            {product.title}
-          </h1>
 
+        {/* Product Info */}
+        <div className="space-y-5">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              {product.title}
+            </h1>
+
+
+          </div>
 
           {categories.length > 0 && (
-            <div className="space-y-4">
+            <div>
+              <h3 className="text-sm font-medium text-gray-500 mb-2">Categories</h3>
               <div className="flex flex-wrap gap-2">
                 {categories.map((category, index) => (
                   <span
@@ -196,31 +235,38 @@ export default function ProductPage() {
           )}
 
           {product.shortDesc && (
-            <div
-              className="text-lg pb-6 break-words overflow-hidden product-content"
-              dangerouslySetInnerHTML={{ __html: product.shortDesc }}
-            />
+            <div>
+              <h3 className="text-sm font-medium text-gray-500 mb-2">Description</h3>
+              <div
+                className="text-base text-gray-700 break-words overflow-hidden product-content"
+                dangerouslySetInnerHTML={{ __html: product.shortDesc }}
+              />
+            </div>
           )}
 
-          <Link href={`/contact?subject=${encodeURIComponent(product.title)}`}>
-            <button className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md">
-              <div className="flex justify-between">
-                <IoLogoWhatsapp className="text-white" size={25} />
-                <span className="px-4">Contact Now</span>
-              </div>
+          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={handleWhatsAppClick}
+              className="flex items-center justify-center space-x-2 px-6 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-sm transition-colors duration-200"
+            >
+              <IoLogoWhatsapp className="text-white" size={22} />
+              <span>Contact on WhatsApp</span>
             </button>
-          </Link>
+
+
+          </div>
         </div>
       </div>
+
       {product.description && (
-        <div className="mt-12">
-          <div className="border-b mb-3">
-            <h2 className="text-2xl font-semibold text-gray-900 pb-3">
-              Full Description
+        <div className="mt-14 pt-8 border-t border-gray-200">
+          <div className="mb-6">
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Product Details
             </h2>
           </div>
           <div
-            className="text-lg leading-relaxed break-words overflow-hidden product-content"
+            className="prose prose-lg max-w-none break-words overflow-hidden product-content"
             dangerouslySetInnerHTML={{ __html: product.description }}
           />
         </div>
