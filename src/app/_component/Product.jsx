@@ -84,17 +84,6 @@ export default function Product({ activepage = "product" }) {
     loadProducts();
   }, [activepage, categoryFilter, subcategoryFilter]);
 
-  // Handle category change
-  const handleCategoryChange = (category) => {
-    setCategoryFilter(category);
-    setSubcategoryFilter(""); // Reset subcategory when category changes
-  };
-
-  // Handle subcategory change
-  const handleSubcategoryChange = (subcategory) => {
-    setSubcategoryFilter(subcategory);
-  };
-
   return (
     <>
       <Wrapper>
@@ -130,7 +119,8 @@ export default function Product({ activepage = "product" }) {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       alt={items.title}
                       width={600}
-                      height={300}
+                      height={600}
+                      style={{ width: '100%', height: 'auto' }}
                       src={items.image}
                     />
                     {/* Enhanced Overlay Effect */}
