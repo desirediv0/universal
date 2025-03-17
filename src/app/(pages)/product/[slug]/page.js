@@ -97,7 +97,7 @@ export default function ProductPage() {
   }, [product]);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "8859399593";
+    const phoneNumber = "+918859399593";
     const message = encodeURIComponent(`I'm interested in: ${product.title}`);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
