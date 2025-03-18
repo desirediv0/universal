@@ -120,7 +120,7 @@ export default function Product({ activepage = "product" }) {
                       alt={items.title}
                       width={600}
                       height={600}
-                      style={{ width: '100%', height: 'auto' }}
+                      style={{ width: "100%", height: "auto" }}
                       src={items.image}
                     />
                     {/* Enhanced Overlay Effect */}
@@ -133,7 +133,7 @@ export default function Product({ activepage = "product" }) {
                       {items.title}
                     </h2>
                     <div className="flex justify-between items-center mt-auto">
-                      <button className="bg-gray-100 hover:bg-[#f0b827] hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg text-sm font-medium">
+                      <button className="bg-gray-100 hover:bg-[#1785c1]   hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg text-sm font-medium">
                         View Details
                       </button>
                     </div>
@@ -145,10 +145,12 @@ export default function Product({ activepage = "product" }) {
         </div>
 
         {/* Show "View All" button on homepage or when filtered */}
-        {(activepage === "homepage" || (categoryFilter !== "all" || subcategoryFilter)) && (
+        {(activepage === "homepage" ||
+          categoryFilter !== "all" ||
+          subcategoryFilter) && (
           <div className="w-full text-center pt-8">
             <Link href="/product">
-              <button className="bg-[#f0b827] text-white border-0 mt-3 py-3 px-8 rounded-lg">
+              <button className="bg-[#f0b827] hover:bg-[#1785c1]   text-white border-0 mt-3 py-3 px-8 rounded-lg">
                 View All Products
               </button>
             </Link>

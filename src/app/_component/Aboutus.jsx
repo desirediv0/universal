@@ -31,7 +31,7 @@ export default function Aboutus({ activepage = "product" }) {
                 <button className="mt-8">
                   <Link
                     href="/about"
-                    className=" py-3 px-8 text-white bg-[#f0b827]  rounded-lg"
+                    className=" py-3 px-8 text-white bg-[#f0b827] hover:bg-[#1785c1]  rounded-lg"
                   >
                     View More
                   </Link>
@@ -39,10 +39,13 @@ export default function Aboutus({ activepage = "product" }) {
               )}
             </section>
             <section className="relative">
-              <Image alt="about image" 
-              height={400} 
-              width={600} src="/cm.png"
-              className="rounded-lg"/>
+              <Image
+                alt="about image"
+                height={400}
+                width={600}
+                src="/cm.png"
+                className="rounded-lg"
+              />
               <div className="p-8 absolute bg-[#f0b827] rounded-lg text-white text-xl left-2 bottom-[-80px] flex lg:flex md:hidden lg:bottom-2 lg:left-[-80px]">
                 Explore Our <br />
                 Journey

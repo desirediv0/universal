@@ -176,138 +176,197 @@ export default function Header() {
     };
 
     return (
-        <>
-            <header className='w-full bg-white sticky top-0 left-0 right-0 z-50 shadow-sm'>
-                <section className='md:max-w-screen-xl max-w-screen-lg mx-auto py-2 lg:px-0 px-4'>
-                    <div className='flex justify-between items-center'>
-                        <Link href='/' onClick={() => menuClick('/')}>
-                            <div className="h-14 md:h-16">
-                                <Image
-                                    src="/logo.jpg"
-                                    width={200}
-                                    height={60}
-                                    alt="logo"
-                                    className='h-full w-auto object-contain'
-                                    priority
-                                />
-                            </div>
-                        </Link>
-
-                        <div className="relative md:w-96 w-0 hidden md:block" ref={searchInputRef}>
-                            <input
-                                type="text"
-                                placeholder="Search products..."
-                                value={searchQuery}
-                                onChange={handleSearchChange}
-                                onFocus={() => setIsSearchFocused(true)}
-                                className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
-                            />
-                            {searchQuery ? (
-                                <button
-                                    onClick={clearSearch}
-                                    className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                                >
-                                    <RxCross2 size={18} />
-                                </button>
-                            ) : null}
-                            <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
-                            {showSearchResults && <SearchResults results={searchResults} />}
-                        </div>
-
-                        <div className="flex items-center space-x-4 md:space-x-6">
-                            <div className="hidden md:flex items-center space-x-2">
-                                <FaPhoneAlt className="text-[#f0b827]" />
-                                <a href='tel:9090939321' className='hover:underline text-black font-medium'>+91 9090939321</a>
-                            </div>
-                            <Link href="/contact" onClick={() => menuClick('/contact')}>
-                                <button className="bg-[#f0b827] text-white px-3 py-2 rounded-full flex items-center space-x-2 hover:bg-[#e0a818] transition">
-                                    <IoChatbubbleOutline />
-                                    <span className="hidden sm:inline">Get Quote</span>
-                                </button>
-                            </Link>
-                            <button
-                                onClick={toggleMobileSearch}
-                                className="md:hidden text-[#f0b827] hover:text-[#e0a818]"
-                            >
-                                {showMobileSearch ? <RxCross2 size={25} /> : <FaSearch size={20} />}
-                            </button>
-                            <button
-                                onClick={handleClick}
-                                className="md:hidden text-[#f0b827] hover:text-[#e0a818]"
-                            >
-                                {isMenuOpen ? <RxCross2 size={25} /> : <RxHamburgerMenu size={25} />}
-                            </button>
-                        </div>
-                    </div>
-
-                    {showMobileSearch && (
-                        <div className="mt-3 pb-3 md:hidden relative">
-                            <div className="relative">
-                                <input
-                                    id="mobileSearchInput"
-                                    type="text"
-                                    placeholder="Search products..."
-                                    value={searchQuery}
-                                    onChange={handleSearchChange}
-                                    className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
-                                />
-                                {searchQuery ? (
-                                    <button
-                                        onClick={clearSearch}
-                                        className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                                    >
-                                        <RxCross2 size={18} />
-                                    </button>
-                                ) : null}
-                                <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
-                            </div>
-                            <SearchResults results={searchResults} isMobile={true} />
-                        </div>
-                    )}
-                </section>
-
-                {isMenuOpen && (
-                    <div className='absolute w-full bg-white shadow-md z-50'>
-                        <Wrapper className='py-4'>
-                            <ul className='flex flex-col text-lg gap-5'>
-                                <li onClick={() => menuClick('/')} className='hover:underline hover:text-[#f0b827]'>Home</li>
-                                <li onClick={() => menuClick('/about')} className='hover:underline hover:text-[#f0b827]'>About</li>
-                                <li onClick={() => menuClick('/product')} className='hover:underline hover:text-[#f0b827]'>Product</li>
-                                <li onClick={() => menuClick('/contact')} className='hover:underline hover:text-[#f0b827]'>Contact</li>
-                                <li>
-                                    <a href='tel:9090939321' className='hover:underline hover:text-[#f0b827] flex items-center gap-2'>
-                                        <FaPhoneAlt size={14} />
-                                        +91 9090939321
-                                    </a>
-                                </li>
-                            </ul>
-                        </Wrapper>
-                    </div>
-                )}
-
-                <div className="w-full bg-[#f0b827] md:py-2">
-                    <section className='md:max-w-screen-xl max-w-screen-lg mx-auto lg:px-0 px-2'>
-                        <nav className='md:flex hidden justify-center'>
-                            <ul className='flex items-center justify-evenly text-lg font-semibold gap-8 lg:gap-16'>
-                                <Link href="/" className='text-white hover:underline'><li>Home</li></Link>
-                                <Link href="/about" className='text-white hover:underline'><li>About</li></Link>
-                                <Link href="/product" className='text-white hover:underline'><li>Product</li></Link>
-                                <Link href="/contact" className='text-white hover:underline'><li>Contact</li></Link>
-                            </ul>
-                        </nav>
-                    </section>
+      <>
+        <header className="w-full bg-white sticky top-0 left-0 right-0 z-50 shadow-sm">
+          <section className="md:max-w-screen-xl max-w-screen-lg mx-auto py-2 lg:px-0 px-4">
+            <div className="flex justify-between items-center">
+              <Link href="/" onClick={() => menuClick("/")}>
+                <div className="h-14 md:h-16">
+                  <Image
+                    src="/logo.jpg"
+                    width={200}
+                    height={60}
+                    alt="logo"
+                    className="h-full w-auto object-contain"
+                    priority
+                  />
                 </div>
-            </header>
+              </Link>
 
-            {/* Overlay when loading */}
-            {isLoading && (
-                <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center">
-                    <div className="bg-white p-4 rounded-md">
-                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#f0b827] mx-auto"></div>
-                        <p className="mt-2 text-sm text-gray-700">Loading product...</p>
-                    </div>
+              <div
+                className="relative md:w-96 w-0 hidden md:block"
+                ref={searchInputRef}
+              >
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  onFocus={() => setIsSearchFocused(true)}
+                  className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
+                />
+                {searchQuery ? (
+                  <button
+                    onClick={clearSearch}
+                    className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                  >
+                    <RxCross2 size={18} />
+                  </button>
+                ) : null}
+                <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                {showSearchResults && <SearchResults results={searchResults} />}
+              </div>
+
+              <div className="flex items-center space-x-4 md:space-x-6">
+                <div className="hidden md:flex items-center space-x-2">
+                  <FaPhoneAlt className="text-[#f0b827]" />
+                  <a
+                    href="tel:9090939321"
+                    className="hover:underline text-black font-medium"
+                  >
+                    +91 9090939321
+                  </a>
                 </div>
+                <Link href="/contact" onClick={() => menuClick("/contact")}>
+                  <button className="hover:bg-[#f0b827] text-white px-3 py-2 rounded-full flex items-center space-x-2 bg-[#1785c1] transition">
+                    <IoChatbubbleOutline />
+                    <span className="hidden sm:inline">Get Quote</span>
+                  </button>
+                </Link>
+                <button
+                  onClick={toggleMobileSearch}
+                  className="md:hidden text-[#f0b827] hover:text-[#e0a818]"
+                >
+                  {showMobileSearch ? (
+                    <RxCross2 size={25} />
+                  ) : (
+                    <FaSearch size={20} />
+                  )}
+                </button>
+                <button
+                  onClick={handleClick}
+                  className="md:hidden text-[#f0b827] hover:text-[#e0a818]"
+                >
+                  {isMenuOpen ? (
+                    <RxCross2 size={25} />
+                  ) : (
+                    <RxHamburgerMenu size={25} />
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {showMobileSearch && (
+              <div className="mt-3 pb-3 md:hidden relative">
+                <div className="relative">
+                  <input
+                    id="mobileSearchInput"
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
+                  />
+                  {searchQuery ? (
+                    <button
+                      onClick={clearSearch}
+                      className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                    >
+                      <RxCross2 size={18} />
+                    </button>
+                  ) : null}
+                  <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                </div>
+                <SearchResults results={searchResults} isMobile={true} />
+              </div>
             )}
-        </>
+          </section>
+
+          {isMenuOpen && (
+            <div className="absolute w-full bg-white shadow-md z-50">
+              <Wrapper className="py-4">
+                <ul className="flex flex-col text-lg gap-5">
+                  <li
+                    onClick={() => menuClick("/")}
+                    className="hover:underline hover:text-[#1785c1]"
+                  >
+                    Home
+                  </li>
+                  <li
+                    onClick={() => menuClick("/about")}
+                    className="hover:underline  hover:text-[#1785c1]"
+                  >
+                    About
+                  </li>
+                  <li
+                    onClick={() => menuClick("/product")}
+                    className="hover:underline hover:text-[#1785c1]"
+                  >
+                    Product
+                  </li>
+                  <li
+                    onClick={() => menuClick("/contact")}
+                    className="hover:underline hover:text-[#1785c1]"
+                  >
+                    Contact
+                  </li>
+                  <li>
+                    <a
+                      href="tel:9090939321"
+                      className="hover:underline hover:text-[#1785c1] flex items-center gap-2"
+                    >
+                      <FaPhoneAlt size={14} />
+                      +91 9090939321
+                    </a>
+                  </li>
+                </ul>
+              </Wrapper>
+            </div>
+          )}
+
+          <div className="w-full bg-[#f0b827] md:py-2">
+            <section className="md:max-w-screen-xl max-w-screen-lg mx-auto lg:px-0 px-2">
+              <nav className="md:flex hidden justify-center">
+                <ul className="flex items-center justify-evenly text-lg font-semibold gap-8 lg:gap-16">
+                  <Link
+                    href="/"
+                    className="text-white hover:underline hover:text-[#1785c1]"
+                  >
+                    <li>Home</li>
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="text-white hover:underline hover:text-[#1785c1]"
+                  >
+                    <li>About</li>
+                  </Link>
+                  <Link
+                    href="/product"
+                    className="text-white hover:underline hover:text-[#1785c1]"
+                  >
+                    <li>Product</li>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-white hover:underline hover:text-[#1785c1]"
+                  >
+                    <li>Contact</li>
+                  </Link>
+                </ul>
+              </nav>
+            </section>
+          </div>
+        </header>
+
+        {/* Overlay when loading */}
+        {isLoading && (
+          <div className="fixed inset-0 bg-black bg-opacity-30 z-50 flex items-center justify-center">
+            <div className="bg-white p-4 rounded-md">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#f0b827] mx-auto"></div>
+              <p className="mt-2 text-sm text-gray-700">Loading product...</p>
+            </div>
+          </div>
+        )}
+      </>
     );
 }
