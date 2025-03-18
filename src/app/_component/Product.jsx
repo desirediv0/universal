@@ -148,14 +148,14 @@ export default function Product({ activepage = "product" }) {
         {(activepage === "homepage" ||
           categoryFilter !== "all" ||
           subcategoryFilter) && (
-          <div className="w-full text-center pt-8">
-            <Link href="/product">
-              <button className="bg-[#f0b827] hover:bg-[#1785c1]   text-white border-0 mt-3 py-3 px-8 rounded-lg">
-                View All Products
-              </button>
-            </Link>
-          </div>
-        )}
+            <div className="w-full text-center pt-8">
+              <Link href="/product">
+                <button className="hover:bg-[#f0b827] bg-[#1785c1]   text-white border-0 mt-3 py-3 px-8 rounded-lg">
+                  View All Products
+                </button>
+              </Link>
+            </div>
+          )}
       </Wrapper>
     </>
   );
