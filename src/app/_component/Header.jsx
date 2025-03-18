@@ -177,7 +177,7 @@ export default function Header() {
 
     return (
       <>
-        <header className="w-full bg-white sticky top-0 left-0 right-0 z-50 shadow-sm">
+        <header className="w-full bg-[#f0b827] sticky top-0 left-0 right-0 z-50 shadow-sm">
           <section className="md:max-w-screen-xl max-w-screen-lg mx-auto py-2 lg:px-0 px-4">
             <div className="flex justify-between items-center">
               <Link href="/" onClick={() => menuClick("/")}>
@@ -203,7 +203,7 @@ export default function Header() {
                   value={searchQuery}
                   onChange={handleSearchChange}
                   onFocus={() => setIsSearchFocused(true)}
-                  className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
+                  className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#f0b827]"
                 />
                 {searchQuery ? (
                   <button
@@ -219,7 +219,7 @@ export default function Header() {
 
               <div className="flex items-center space-x-4 md:space-x-6">
                 <div className="hidden md:flex items-center space-x-2">
-                  <FaPhoneAlt className="text-[#f0b827]" />
+                  <FaPhoneAlt className="text-black" />
                   <a
                     href="tel:9090939321"
                     className="hover:underline text-black font-medium"
@@ -228,7 +228,7 @@ export default function Header() {
                   </a>
                 </div>
                 <Link href="/contact" onClick={() => menuClick("/contact")}>
-                  <button className="hover:bg-[#f0b827] text-white px-3 py-2 rounded-full flex items-center space-x-2 bg-[#1785c1] transition">
+                  <button className="hover:bg-[#2575a0] text-white px-3 py-2 rounded-full flex items-center space-x-2 bg-[#1785c1] transition">
                     <IoChatbubbleOutline />
                     <span className="hidden sm:inline">Get Quote</span>
                   </button>
@@ -324,31 +324,31 @@ export default function Header() {
             </div>
           )}
 
-          <div className="w-full bg-[#f0b827] md:py-2">
+          <div className="w-full bg-[#1785c1] md:py-2">
             <section className="md:max-w-screen-xl max-w-screen-lg mx-auto lg:px-0 px-2">
               <nav className="md:flex hidden justify-center">
                 <ul className="flex items-center justify-evenly text-lg font-semibold gap-8 lg:gap-16">
                   <Link
                     href="/"
-                    className="text-white hover:underline hover:text-[#1785c1]"
+                    className="text-white hover:underline hover:text-[#f0b827]"
                   >
                     <li>Home</li>
                   </Link>
                   <Link
                     href="/about"
-                    className="text-white hover:underline hover:text-[#1785c1]"
+                    className="text-white hover:underline hover:text-[#f0b827]"
                   >
                     <li>About</li>
                   </Link>
                   <Link
                     href="/product"
-                    className="text-white hover:underline hover:text-[#1785c1]"
+                    className="text-white hover:underline hover:text-[#f0b827]"
                   >
                     <li>Product</li>
                   </Link>
                   <Link
                     href="/contact"
-                    className="text-white hover:underline hover:text-[#1785c1]"
+                    className="text-white hover:underline hover:text-[#f0b827]"
                   >
                     <li>Contact</li>
                   </Link>
