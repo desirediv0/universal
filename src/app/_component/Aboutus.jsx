@@ -13,7 +13,7 @@ export default function Aboutus({ activepage = "product" }) {
             <p className="text-lg">
               At Universal Machines, we are dedicated to revolutionizing the
               construction and road maintenance industry by providing
-              state-of-the-art soil stabilization and road reclamation
+              state-of-the-art soil stabilization, road reclamation
               solutions and concrete paving solutions. Our commitment to innovation, durability, and
               efficiency drives us to engineer high-performance machinery that
               meets the evolving demands of infrastructure development.
