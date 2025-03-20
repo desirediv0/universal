@@ -28,44 +28,44 @@ export default function Footer() {
           <section className="flex flex-col gap-2">
             <h1 className="text-2xl pb-2 font-medium ">Useful Links</h1>
             <Link href="/" className="hover:text-[#f0b827]">
-              <h2>Home</h2>
+              Home
             </Link>
             <Link href="/about" className="hover:text-[#f0b827]">
-              <h2>About</h2>
+              About
             </Link>
             <Link href="/product" className="hover:text-[#f0b827]">
-              <h2>Products</h2>
+              Product
             </Link>
             <Link href="/contact" className="hover:text-[#f0b827]">
-              <h2>Contact</h2>
+              Contact
             </Link>
           </section>
           <section className="flex flex-col gap-2">
             <h1 className="text-2xl pb-2 font-medium ">Products</h1>
+            <Link href="/product/roadmac-cr-500">
             <span className="flex items-center gap-2 hover:text-[#f0b827]">
               <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Motor Grader</h2>
+              Roadmac CR 500
             </span>
+            </Link>
+            <Link href="/product/power-curber-5700-d">
             <span className="flex items-center gap-2 hover:text-[#f0b827]">
               <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Road Roller</h2>
+              Power Curber 5700 D
             </span>
+            </Link>
+            <Link href="/product/roadmac-cr-600">
             <span className="flex items-center gap-2 hover:text-[#f0b827]">
               <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Truck Crane</h2>
+              Roadmac CR 600
             </span>
+            </Link>
+            <Link href="/product/roadmac-sr-2300">
             <span className="flex items-center gap-2 hover:text-[#f0b827]">
               <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Dump Truck</h2>
+              Roadmac SR 2300
             </span>
-            <span className="flex items-center gap-2 hover:text-[#f0b827]">
-              <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Concrete Mixer</h2>
-            </span>
-            <span className="flex items-center gap-2 hover:text-[#f0b827]">
-              <IoIosArrowForward color="text-[#f0b827]" size={15} />{" "}
-              <h2>Forklift Truck</h2>
-            </span>
+            </Link>
           </section>
           <section className="flex flex-col gap-4">
             <h1 className="text-2xl pb-2 font-medium ">Get in Touch</h1>
